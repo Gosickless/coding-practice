@@ -1,24 +1,65 @@
-# Compiled class file
-*.class
-
-# Log file
+# === 通用 / Windows / IDE ===
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
 *.log
+*.bak
+.vscode/
+.idea/
+.eclipse/
+*.iml
+*.classpath
+*.project
+*.settings/
 
-# BlueJ files
-*.ctxt
+# === C / C++ ===
+*.o
+*.a
+*.so
+*.exe
+*.out
+*.app
+*.dSYM/
+build/
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+*.pdb
+*.ilk
+*.lib
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# === Java ===
+*.class
 *.jar
 *.war
-*.nar
 *.ear
-*.zip
-*.tar.gz
-*.rar
+target/
+.gradle/
+build/
+out/
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# === 前端 (Node.js / React / Vue / HTML+JS) ===
+node_modules/
+dist/
+build/
+.cache/
+.env
+.env.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+*.log
+
+# === 其他防患于未然 ===
+__pycache__/
+*.pyc
+*.zip
+*.rar
+*.7z
+*.tar.gz
