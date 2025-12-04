@@ -12,6 +12,7 @@ Thumbs.db
 *.classpath
 *.project
 *.settings/
+*.bat
 
 # === C / C++ ===
 *.o
