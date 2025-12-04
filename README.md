@@ -14,12 +14,15 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 
 ### 📁 Repository Structure
+```plaintext
 coding-practice/
-├── cpp/ → C++ 力扣/面试题/算法
-├── java/ → Java 力扣/面试题/算法
-├── frontend/ → JS / Vue / HTML+CSS 
-├── notes/ → 面经、算法总结、思维导图
-└── images/ → 算法图示、截图
+├── c/          → C 语言练习
+├── cpp/        → C++ 力扣/面试题/算法
+├── java/       → Java 力扣/面试题
+├── frontend/   → JS / React / Vue / HTML+CSS 项目
+├── notes/      → 面经、算法总结、思维导图
+├── images/     → 算法图示、截图
+└── .gitignore  → 忽略文件
 
 ### 📊 LeetCode Progress（持续更新）
 
