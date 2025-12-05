@@ -2,6 +2,12 @@
 # 项目特定的逻辑。
 #
 cmake_minimum_required (VERSION 3.8)
+project(my-stl VERSION 1.0.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 我们稍后添加库和可执行文件
 
 # 如果支持，请为 MSVC 编译器启用热重载。
 if (POLICY CMP0141)
