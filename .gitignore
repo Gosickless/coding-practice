@@ -32,6 +32,8 @@ x86/
 *.pdb
 *.ilk
 *.lib
+.vs/
+out/
 
 # === Java ===
 *.class
