@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tlias智能学习辅助系统</title>
+    <style>
+        body{
+            margin:0;
+        }
+
+        button{
+            cursor:pointer;
+        }
+
+        #container{
+            width:80%;
+            margin:0 auto;
+        }
+
+        .header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background-color:rgb(194, 192, 192);
+            padding:20px;
+        }
+
+        .header h1{
+            margin:0;
+            font-size:30px;
+            font-family:"楷体";
+            font-weight: bold;
+        }
+
+        .header a{
+            text-decoration:none;
+            color:rgb(99, 96, 115);
+        }
+
+        .searchform{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding: 20px;
+            background-color: rgb(249, 249, 249);
+        }
+
+        .searchform input[type="text"],.searchform select{
+            margin-right: 15px;
+            padding:10px;
+            border: 1px solid #ccc;
+            border-radius:5px;
+            width:23%;
+        }
+
+        .searchform button{
+           padding: 10px 20px;
+           margin: 0 5px;
+           background-color: rgb(0, 123, 255);
+           color:white;
+           border:none;
+           border-radius:7px;
+           cursor:pointer;
+        }
+
+        .searchform button.clear{
+            background-color:#6c757d;
+        }
+        
+        .table{
+            border-collapse:collapse;
+            width:100%;
+        }
+
+        .table th,.table td{
+            border:1px solid #ccc;
+            padding:8px;
+            text-align:center;
+        }
+
+        .footer{
+            background-color:#c2c0c0;
+            color:white;
+            text-align:center;
+            padding:10px 0;
+            margin-top:20px;
+
+        }
+
+        .footer .company-name{
+            font-size:1.1em;
+            font-weight: bold;
+        }
+
+        .footer .copyright{
+            font-size:0.9em;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="container">
+
+        <div class="header">
+            <h1>Tlias智能学习辅助系统</h1>
+            <a href="#">退出系统</a>
+        </div>
+
+        <form class="searchform">
+            <input type="text" name="name" placeholder="姓名" v-model="searchtable.name">
+            <select name="gender" v-model="searchtable.gender">
+                <option value="">请选择性别</option>
+                <option value="1">男</option>
+                <option value="2">女</option>
+            </select>
+            <select name="job" id="" v-model="searchtable.job">
+                <option value="">请选择职务</option>
+                <option value="1">学生</option>
+                <option value="2">教师</option>
+                <option value="3">工程师</option>
+                <option value="4">维修工</option>
+                <option value="5">医生</option>
+            </select>
+            <button type="button" @click="search">查询</button>
+            <button type="button" @click="clear">清空</button>
+        </form> 
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>头像</th>
+                    <th>职务</th>
+                    <th>入职日期</th>
+                    <th>最后操作时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(td, index) in tablelist" :key="index">
+                    <td>{{td.name}}</td>
+                    <td>{{td.gender == '1' ? '男' : '女'}}</td>
+                    <td><img v-bind:src="td.image" :alt="td.name" width="30px" class="a"></td>
+                    <td>
+                        <span v-if="td.job==1">学生</span>
+                        <span v-else-if="td.job==2">教师</span>
+                        <span v-else-if="td.job==3">工程师</span>
+                        <span v-else-if="td.job==4">维修工</span>
+                        <span v-else>医生</span>
+                    </td>
+                    <td>{{td.entrydate}}</td>
+                    <td>{{td.updatetime}}</td>
+                    <td>
+                        <button>编辑</button>
+                        <button>删除</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer class="footer">
+            <p class="company-name">江苏传智播客教育科技股份有限公司</p>
+            <p class="copyright">版权所有 Copyright 2006-2024 All Rights Reserved</p>
+        </footer>
+
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <script type="module">
+        import{createApp} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+        createApp({
+            data(){
+                return{
+                    searchtable:{
+                        name:'',
+                        gender:'',
+                        job:''
+                    },
+
+                    tablelist:[],
+                }
+            },
+
+            methods: {
+                async search(){
+                    const result=await axios.get(`https://web-server.itheima.net/emps/list?name=${this.searchtable.name}&gender=${this.searchtable.gender}&job=${this.searchtable.job}`);
+                    this.tablelist=result.data.data;
+                    // 无用的方法:
+                    // const trs=document.querySelectorAll('tr');
+                    //     for(let i=1;i<trs.length;i++){
+                    //         trs[i].addEventListener('mouseenter',function(){
+                    //             this.style.backgroundColor='#f2e2e2';
+                    //         });
+                    //         trs[i].addEventListener('mouseleave',function(){
+                    //             this.style.backgroundColor='#fff';
+                    //         });
+                    //     }
+                },
+
+                clear(){
+                    this.searchtable={
+                        name:'',
+                        gender:'',
+                        job:''
+                    }
+                    this.search();
+                }
+
+
+            },
+
+            mounted(){
+                this.search();
+            }
+
+        }).mount('#container')
+
+    
+    </script>
+</body>
+</html>

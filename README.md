@@ -20,11 +20,11 @@
 coding-practice/
 ├── c/          → C 数据结构/算法
 ├── cpp/        → C++ stl容器实现(暂停中)
+├── frontend/   → JS / React / Vue / HTML+CSS 练手
 ├── java/       → Java 力扣/面试题
-├── frontend/   → JS / React / Vue / HTML+CSS 项目
-├── notes/      → 面经、算法总结、思维导图
-├── images/     → 算法图示、截图
-└── .gitignore  → 忽略文件
+├── .gitignore  → 忽略文件
+├── LICENSE     → MIT 许可证
+└── README.md   → 项目介绍
 ```
 
 ### 📊 LeetCode Progress（持续更新）
