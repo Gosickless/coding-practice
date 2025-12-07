@@ -29,13 +29,13 @@ coding-practice/
 
 ### 📊 LeetCode Progress（持续更新）
 
-| #   | Problem                         | C                      | C++                          | Java                         | Difficulty |
-| --- | ------------------------------- | ---------------------- | ---------------------------- | ---------------------------- | ---------- |
-| 1   | Two Sum                         | [code](c/leetcode/1.c) | [code](cpp/leetcode/1.cpp)   | [code](java/leetcode/1.java) | Easy       |
-| 2   | Add Two Numbers                 |                        | [code](cpp/leetcode/2.cpp)   |                              | Medium     |
-| 4   | Median of Two Sorted Arrays     |                        | [code](cpp/leetcode/4.cpp)   |                              | Hard       |
-| 215 | Kth Largest Element in an Array |                        | [code](cpp/leetcode/215.cpp) |                              | Medium     |
-| ... | 更多持续更新中...               |                        |                              |                              |            |
+| #   | Problem                         | Java                         | Difficulty |
+| --- | ------------------------------- | ---------------------------- | ---------- |
+| 1   | Two Sum                         | [code](java/leetcode/1.java) | Easy       |
+| 2   | Add Two Numbers                 |                              | Medium     |
+| 4   | Median of Two Sorted Arrays     |                              | Hard       |
+| 215 | Kth Largest Element in an Array |                              | Medium     |
+| ... | 更多持续更新中...               |                              |            |
 
 ### 🚀 Highlight Projects
 
