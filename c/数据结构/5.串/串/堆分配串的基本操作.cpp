@@ -1,6 +1,6 @@
 #include"HString.h"
 
-void InitString(HString* T) 
+void InitString(HString* T)
 {
 	T->ch = NULL;
 	T->length = 0;
@@ -46,7 +46,7 @@ void ClearString(HString* T)
 	if (T->ch)
 	{
 		free(T->ch);
-		T -> ch = NULL;
+		T->ch = NULL;
 	}
 	T->length = 0;
 }

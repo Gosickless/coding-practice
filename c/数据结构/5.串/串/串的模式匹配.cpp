@@ -5,7 +5,7 @@
 // next* get_next(HString S)//int (*get_next(HString S))[100]//二者等价
 int next[100];
 
-void get_next(HString S,int next[])
+void get_next(HString S, int next[])
 {
 	int i = 0;
 	int j = -1;
@@ -32,7 +32,7 @@ int Index_KMP(HString T, HString S, int pos)
 	int j = 0;
 	while (i < T.length && j < S.length)
 	{
-		if (j==-1||T.ch[i] == S.ch[j])
+		if (j == -1 || T.ch[i] == S.ch[j])
 		{
 			i++;
 			j++;

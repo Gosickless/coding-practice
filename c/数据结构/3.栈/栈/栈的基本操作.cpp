@@ -57,7 +57,7 @@ void StackTraverse(SqStack S)
 		return;
 	}
 	elemtype* p = S.base;
-	while (p<S.top)
+	while (p < S.top)
 		printf("%d ", *p++);
 	printf("\n");
 }

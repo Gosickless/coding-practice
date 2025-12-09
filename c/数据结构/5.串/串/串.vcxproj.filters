@@ -32,5 +32,8 @@
     <ClCompile Include="Index.h">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="KMP.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

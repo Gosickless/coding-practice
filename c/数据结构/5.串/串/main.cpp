@@ -1,6 +1,7 @@
 #include"HString.h"
 #include"Index.h"
 
+
 extern int next[100];
 
 int main()
@@ -8,7 +9,7 @@ int main()
 	char a[] = "abcdefg";
 	char b[] = "hijkl";
 	char c[] = "def";
-	HString T, S1, S2, *Sub;
+	HString T, S1, S2, * Sub;
 	InitString(&T);
 	InitString(&S1);
 	InitString(&S2);
@@ -30,7 +31,10 @@ int main()
 	get_next(S, next);
 	int index_KMP = Index_KMP(T, S, 1);
 	printf("%d\n", index_KMP);
-	int index = Index(T, S,1);
+	int index = Index(T, S, 1);
 	printf("%d\n", index);
+
 	return 0;
 }
+
+

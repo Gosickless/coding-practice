@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Index.h" />
+    <ClCompile Include="KMP.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="串的模式匹配.cpp" />
     <ClCompile Include="堆分配串的基本操作.cpp" />
